@@ -1,0 +1,278 @@
+/* ==========================================
+   1. GLOBAL RESETS & VARIABLES
+   ========================================== */
+:root {
+    --primary-color: #0d5c3a;       /* Deep NPO Green */
+    --secondary-color: #1e3a8a;     /* Trust Blue */
+    --accent-color: #e67e22;        /* Vibrant Warm Orange */
+    --neutral-light: #f8f9fa;       /* Background Off-white */
+    --neutral-dark: #2c3e50;        /* Body Text Dark Gray */
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+    --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-body: 'Arial', sans-serif;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--neutral-dark);
+    background-color: var(--neutral-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    max-width: 1100px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION STYLING
+   ========================================== */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* ==========================================
+   3. SECTIONS & CARDS
+   ========================================== */
+section {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+    border-top: 4px solid var(--accent-color);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.8rem 1.75rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+/* Card Grid Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow);
+}
+
+.card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   4. FORM STYLING
+   ========================================== */
+.form-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--neutral-dark);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.85rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #09442a;
+}
+
+/* ==========================================
+   5. CONTACT PAGE STYLING
+   ========================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: #f8fafc;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* ==========================================
+   6. FOOTER STYLING
+   ========================================== */
+footer {
+    background-color: var(--neutral-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   7. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        display: block;
+        padding: 0.6rem;
+    }
+
+    main {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+}
