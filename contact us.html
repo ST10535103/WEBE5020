@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Siyabonga Africa main center in Brakpan or send us a direct general message.">
     <title>Siyabonga Africa | Contact Us</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -35,9 +36,52 @@
                 </article>
             </div>
         </section>
+
+        <section class="form-container">
+            <h2>Send Us a General Message</h2>
+            <p>Fill out the form below to compile and send an email directly to our team.</p>
+
+            <div id="contact-success" class="success-message" style="display: none;">
+                Your message has been validated! Opening your email client to send to info@siyabongaafrica.org.za...
+            </div>
+
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="c-name">Your Name:</label>
+                    <input type="text" id="c-name" name="c-name" placeholder="Enter your full name">
+                    <small id="c-name-error" class="error-text"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-email">Your Email:</label>
+                    <input type="email" id="c-email" name="c-email" placeholder="name@example.com">
+                    <small id="c-email-error" class="error-text"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-subject">Message Type:</label>
+                    <select id="c-subject" name="c-subject">
+                        <option value="">-- Select Subject --</option>
+                        <option value="General Query">General Query</option>
+                        <option value="Media & Press">Media & Press</option>
+                        <option value="Feedback">Feedback</option>
+                    </select>
+                    <small id="c-subject-error" class="error-text"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-message">Full Message:</label>
+                    <textarea id="c-message" name="c-message" rows="4" placeholder="Type your message here..."></textarea>
+                    <small id="c-message-error" class="error-text"></small>
+                </div>
+
+                <button type="submit">Send Email</button>
+            </form>
+        </section>
     </main>
     <footer>
         <p>&copy; 2026 Siyabonga Africa NPO. All Rights Reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
